@@ -97,8 +97,9 @@ along with poems.  If not, see <http://www.gnu.org/licenses/>.
 		<xsd:complexContent>
 			<xsd:extension base="TitledIDType">
 				<xsd:sequence>
+					<xsd:element name="display_name" type="StringProperty" minOccurs="1" maxOccurs="1" />
 					<xsd:element name="first_name" type="StringProperty" minOccurs="0" maxOccurs="1" />
-					<xsd:element name="name" type="StringProperty" minOccurs="1" maxOccurs="1" />
+					<xsd:element name="name" type="StringProperty" minOccurs="0" maxOccurs="1" />
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>

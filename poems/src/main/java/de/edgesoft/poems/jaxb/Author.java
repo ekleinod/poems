@@ -20,8 +20,9 @@ import de.edgesoft.edgeutils.javafx.SimpleStringPropertyAdapter;
  *   &lt;complexContent>
  *     &lt;extension base="{}TitledIDType">
  *       &lt;sequence>
+ *         &lt;element name="display_name" type="{}StringProperty"/>
  *         &lt;element name="first_name" type="{}StringProperty" minOccurs="0"/>
- *         &lt;element name="name" type="{}StringProperty"/>
+ *         &lt;element name="name" type="{}StringProperty" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -32,6 +33,7 @@ import de.edgesoft.edgeutils.javafx.SimpleStringPropertyAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Author", propOrder = {
+    "displayName",
     "firstName",
     "name"
 })
@@ -39,12 +41,39 @@ public class Author
     extends TitledIDType
 {
 
+    @XmlElement(name = "display_name", required = true, type = String.class)
+    @XmlJavaTypeAdapter(SimpleStringPropertyAdapter.class)
+    protected SimpleStringProperty displayName;
     @XmlElement(name = "first_name", type = String.class)
     @XmlJavaTypeAdapter(SimpleStringPropertyAdapter.class)
     protected SimpleStringProperty firstName;
-    @XmlElement(required = true, type = String.class)
+    @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(SimpleStringPropertyAdapter.class)
     protected SimpleStringProperty name;
+
+    /**
+     * Gets the value of the displayName property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public SimpleStringProperty getDisplayName() {
+        return displayName;
+    }
+
+    /**
+     * Sets the value of the displayName property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setDisplayName(SimpleStringProperty value) {
+        this.displayName = value;
+    }
 
     /**
      * Gets the value of the firstName property.

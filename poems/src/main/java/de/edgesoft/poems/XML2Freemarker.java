@@ -7,7 +7,12 @@ import java.io.Writer;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.Collator;
+import java.time.LocalDate;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,6 +20,7 @@ import org.apache.logging.log4j.Logger;
 import de.edgesoft.edgeutils.EdgeUtilsException;
 import de.edgesoft.edgeutils.commandline.AbstractMainClass;
 import de.edgesoft.edgeutils.files.JAXBFiles;
+import de.edgesoft.poems.jaxb.Poem;
 import de.edgesoft.poems.jaxb.Poems;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
@@ -118,6 +124,13 @@ public class XML2Freemarker extends AbstractMainClass {
 			logger.info("reading xml file.");
 
 			Poems dtaPoems = JAXBFiles.unmarshal(theInputFile, Poems.class);
+
+
+			logger.info("sorting poems by date.");
+
+			List<Poem> poemSorted = dtaPoems.getContent().getPoem().stream().sorted(Comparator.comparing(poem -> (LocalDate) poem.getDate().getValue())).collect(Collectors.toList());
+			dtaPoems.getContent().getPoem().clear();
+			dtaPoems.getContent().getPoem().addAll(poemSorted);
 
 
 			logger.info("reading template file.");

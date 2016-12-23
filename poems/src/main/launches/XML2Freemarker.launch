@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/poems/src/main/java/de/edgesoft/poems/XML2Freemarker.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.m2e.launchconfig.classpathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="de.edgesoft.poems.XML2Freemarker"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="--xml &quot;/home/ekleinod/working/rani/privates/Sport/Tischtennis/Gedichte/Brauerlyrik.xml&quot; --template &quot;/home/ekleinod/working/rani/privates/Sport/Tischtennis/Gedichte/Brauerlyrik-Template.tex&quot; --output &quot;/home/ekleinod/working/rani/privates/Sport/Tischtennis/Gedichte/Brauerlyrik.tex&quot;"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="poems"/>
+<stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
+</launchConfiguration>
